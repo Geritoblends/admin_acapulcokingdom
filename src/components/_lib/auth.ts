@@ -3,7 +3,7 @@
 import { db } from '@/drizzle/db';
 import { users } from '@/drizzle/schema';
 import { FormState, LoginFormSchema, SignupFormSchema } from './definitions';
-import { createSession, deleteSession } from '@/app/auth/02-stateless-session';
+import { createSession, deleteSession } from './session';
 import bcrypt from 'bcrypt';
 import { eq } from 'drizzle-orm';
 

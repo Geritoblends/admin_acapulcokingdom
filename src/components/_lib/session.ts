@@ -39,7 +39,7 @@ export async function createSession(userId: string) {
     path: '/',
   });
 
-  redirect('/dashboard');
+  redirect('/');
 }
 
 export async function verifySession() {

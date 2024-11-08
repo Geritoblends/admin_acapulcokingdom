@@ -3,8 +3,8 @@ import { decrypt } from '@/components/_lib/session';
 import { cookies } from 'next/headers';
 
 // 1. Specify protected and public routes
-const protectedRoutes = ['/dashboard'];
-const publicRoutes = ['/login', '/signup', '/'];
+const protectedRoutes = ['/'];
+const publicRoutes = ['/login', '/signup'];
 
 export default async function middleware(req: NextRequest) {
   // 2. Check if the current route is protected or public
@@ -24,10 +24,15 @@ export default async function middleware(req: NextRequest) {
   if (
     isPublicRoute &&
     session?.userId &&
-    !req.nextUrl.pathname.startsWith('/dashboard')
+    !req.nextUrl.pathname.startsWith('/')
   ) {
-    return NextResponse.redirect(new URL('/dashboard', req.nextUrl));
+    return NextResponse.redirect(new URL('/', req.nextUrl));
   }
 
   return NextResponse.next();
 }
+
+export const config = {
+    matcher: '/',  // This will match all routes, applying middleware globally
+  };
+  

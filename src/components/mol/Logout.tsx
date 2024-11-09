@@ -37,7 +37,7 @@ export const Logout = () => {
             </div>
         </DialogContent>
         </Dialog>
-        <TooltipContent>
+        <TooltipContent side="right">
             <p>Log out</p>
         </TooltipContent>
         </Tooltip>

@@ -29,7 +29,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                   <Link href='/' className={styles.item}><GoHome size={32} fill={current === "home" ? 'black' : "grey"}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Home</p>
                 </TooltipContent>
               </Tooltip>
@@ -39,7 +39,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                   <Link href='/' className={styles.item}><GoLog size={32} fill={current === "reservations" ? 'black' : "grey"}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Reservations</p>
                 </TooltipContent>
               </Tooltip>
@@ -49,7 +49,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                 <Link href="/calendars" className={styles.item}><GoCalendar fill={current === "calendars" ? 'black' : "grey"} size={32}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Calendars</p>
                 </TooltipContent>
               </Tooltip>
@@ -59,7 +59,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                 <Link href="/hotels" className={styles.item}><GoOrganization fill={current === "properties" ? 'black' : "grey"} size={32}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Properties</p>
                 </TooltipContent>
               </Tooltip>
@@ -69,7 +69,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                 <Link href="/" className={styles.item}><GoPeople fill={current === "guests" ? 'black' : "grey"} size={32}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Guests</p>
                 </TooltipContent>
               </Tooltip>
@@ -80,7 +80,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                   <TooltipTrigger>
                   <Link href="/" className={styles.item}><GoInbox fill={"black"} size={32}/></Link>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent side="right">
                     <p>Box Cut</p>
                   </TooltipContent>
                 </Tooltip>
@@ -93,7 +93,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
                 <TooltipTrigger>
                 <Link href="/" className={styles.item}><GoGear fill={current === "config" ? 'black' : "grey"} size={32}/></Link>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent side="right">
                   <p>Configuration</p>
                 </TooltipContent>
               </Tooltip>

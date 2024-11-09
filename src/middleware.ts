@@ -3,8 +3,8 @@ import { decrypt } from '@/components/_lib/session';
 import { cookies } from 'next/headers';
 
 // 1. Specify protected and public routes
-const protectedRoutes = ['/'];
-const publicRoutes = ['/login', '/signup'];
+const protectedRoutes = ['/home', '/new-reservation'];
+const publicRoutes = ['/login', '/signup', '/'];
 
 export default async function middleware(req: NextRequest) {
   // 2. Check if the current route is protected or public
@@ -26,7 +26,11 @@ export default async function middleware(req: NextRequest) {
     session?.userId &&
     !req.nextUrl.pathname.startsWith('/')
   ) {
-    return NextResponse.redirect(new URL('/', req.nextUrl));
+    return NextResponse.redirect(new URL('/home', req.nextUrl));
+  }
+
+  if (req.nextUrl.pathname === "/"){
+    return NextResponse.redirect(new URL('/home', req.nextUrl));
   }
 
   return NextResponse.next();

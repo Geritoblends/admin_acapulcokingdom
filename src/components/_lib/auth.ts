@@ -110,4 +110,5 @@ export async function login(
 
 export async function logout() {
   deleteSession();
+  console.log("Delete session happened")
 }

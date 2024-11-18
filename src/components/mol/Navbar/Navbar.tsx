@@ -13,7 +13,7 @@ import { FC } from "react"
 import { Logout } from "../Logout"
  
 interface LeftNavbarProps {
-  current: "home" | "reservations" | "calendars" | "properties" | "config" | "guests" | "box cut" | "insights" | "users and permissions"
+  current: "home" | "reservations" | "calendars" | "properties" | "config" | "guests" | "box cut" | "insights" | "users and permissions" | "none"
 }
 
 export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
@@ -27,7 +27,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <Link href='/' className={styles.item}><GoHome size={32} fill={current === "home" ? 'black' : "grey"}/></Link>
+                  <Link href='/home' className={styles.item}><GoHome size={32} fill={current === "home" ? 'black' : "grey"}/></Link>
                 </TooltipTrigger>
                 <TooltipContent side="right">
                   <p>Home</p>
@@ -37,7 +37,7 @@ export const LeftNavbar: FC<LeftNavbarProps> = ({current}) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <Link href='/' className={styles.item}><GoLog size={32} fill={current === "reservations" ? 'black' : "grey"}/></Link>
+                  <Link href='/reservations' className={styles.item}><GoLog size={32} fill={current === "reservations" ? 'black' : "grey"}/></Link>
                 </TooltipTrigger>
                 <TooltipContent side="right">
                   <p>Reservations</p>
@@ -115,11 +115,11 @@ export const BottomNavbar: React.FC<LeftNavbarProps> = ({current}) => {
   return (
     <footer id='footer' style={{position: "relative", width: "100%", backgroundColor: "white", padding: "1.75rem 0", boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.05)"}}>
       <div style={{display: "flex", justifyContent: "space-evenly"}}>
-        <Link href='/' className={styles.item}><GoHome size={32} fill={current === "home" ? 'black' : "grey"}/></Link>
-        <Link href='/' className={styles.item}><GoLog size={32} fill={current === "reservations" ? 'black' : "grey"}/></Link>
+        <Link href='/home' className={styles.item}><GoHome size={32} fill={current === "home" ? 'black' : "grey"}/></Link>
+        <Link href='/reservations' className={styles.item}><GoLog size={32} fill={current === "reservations" ? 'black' : "grey"}/></Link>
         <Link href="/calendars" className={styles.item}><GoCalendar fill={current === "calendars" ? 'black' : "grey"} size={32}/></Link>
-        <Link href="/" className={styles.item}><GoPeople fill={current === "guests" ? 'black' : "grey"} size={32}/></Link>
-        <Link href="/" className={styles.item}><GoGear fill={current === "config" ? 'black' : "grey"} size={32}/></Link>
+        <Link href="/guests" className={styles.item}><GoPeople fill={current === "guests" ? 'black' : "grey"} size={32}/></Link>
+        <Link href="/config" className={styles.item}><GoGear fill={current === "config" ? 'black' : "grey"} size={32}/></Link>
       </div>
     </footer>
   )

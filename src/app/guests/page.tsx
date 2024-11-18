@@ -1,13 +1,13 @@
+import ClientList from "@/components/mol/clients/ClientList";
 import { Layout } from "@/components/mol/Layout";
-import { HomeTabsContainer } from "@/components/mol/Home/HomeTabsContainer";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
 import { GoPlusCircle } from "react-icons/go";
 
 export default function Page() {
   return (
-    <Layout current="home">
-      <header className="border-b border-gray-200 mb-5 pb-5 mt-5">
+    <Layout current="guests">
+        <header className="border-b border-gray-200 mb-5 pb-5 mt-5">
         <p style={{opacity: 0.5}}>
                 Acapulco Kingdom
             </p>
@@ -15,24 +15,24 @@ export default function Page() {
                 <div>
                     
                     <p style={{fontSize: 32}}>
-                        Hola, Isaac
+                        Huéspedes
                     </p>
                 </div>
                 <div style={{display: "flex", alignItems: "center", gap: "0.75rem"}}>
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger>
-                          <Link href={"/new-reservation"}><GoPlusCircle size={32} fill='gray'/></Link>
+                          <Link href={"/new-guest"}><GoPlusCircle size={32} fill='gray'/></Link>
                         </TooltipTrigger>
                         <TooltipContent side="bottom">
-                          Nueva reservación
+                          Nuevo huesped
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                 </div>
             </div>
         </header>
-        <HomeTabsContainer />
+        <ClientList />
     </Layout>
-  );
+  )
 }

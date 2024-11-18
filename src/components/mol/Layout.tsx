@@ -3,7 +3,7 @@ import { BottomNavbar, LeftNavbar } from './Navbar/Navbar';
 
 interface LayoutProps {
   children: ReactNode;
-  current: 'home' | 'reservations' | 'calendars' | 'properties' | 'config';
+  current: 'home' | 'reservations' | 'calendars' | 'properties' | 'config' | 'none' | 'guests';
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children, current }) => {
@@ -15,7 +15,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, current }) => {
       </div>
 
       {/* Main content area */}
-      <div className="flex-1 w-full h-full overflow-y-auto px-7 pt-7 md:pt-0">
+      <div className="flex-1 w-full h-full overflow-y-auto px-7 pt-7 md:pt-0 min-w-screen">
         {children}
       </div>
 

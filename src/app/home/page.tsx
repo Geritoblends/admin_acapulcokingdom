@@ -3,6 +3,7 @@ import { HomeTabsContainer } from "@/components/mol/Home/HomeTabsContainer";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
 import { GoPlusCircle } from "react-icons/go";
+import ReservationForm from "@/components/mol/ReservationForm";
 
 export default function Page() {
   return (
@@ -14,15 +15,16 @@ export default function Page() {
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <div>
                     
-                    <p style={{fontSize: 32}}>
+                    <p className="text-4xl">
                         Hola, Isaac
                     </p>
                 </div>
                 <div style={{display: "flex", alignItems: "center", gap: "0.75rem"}}>
                     <TooltipProvider>
                       <Tooltip>
-                        <TooltipTrigger>
-                          <Link href={"/new-reservation"}><GoPlusCircle size={32} fill='gray'/></Link>
+                        <TooltipTrigger asChild>
+                          <ReservationForm />
+                          {/* <Link href={"/new-reservation"}><GoPlusCircle size={32} fill='gray'/></Link> */}
                         </TooltipTrigger>
                         <TooltipContent side="bottom">
                           Nueva reservación

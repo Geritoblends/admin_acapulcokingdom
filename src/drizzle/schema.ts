@@ -33,6 +33,7 @@ export const clients = pgTable(
   {
     id: serial('id').primaryKey(),
     name: text('name').notNull(),
+    lastName: text('lastName').notNull(),
     email: text('email').unique().notNull(),
     phone: text('phone').notNull(), // Optional, can be used for contact
   },
@@ -54,9 +55,9 @@ export const reservations = pgTable('reservations', {
   checkIn: timestamp('checkIn').notNull(), // Check-in date/time
   checkOut: timestamp('checkOut').notNull(), // Check-out date/time
   amountOfNights: integer('amountOfNights').notNull(), // Number of nights (integer)
-  amountOfGuests: decimal('amountOfGuests').notNull(), // Number of guests (float)
+  amountOfAdults: integer('amountOfAdults').notNull(), // Number of adults (integer)
+  childrenAges: integer('amountOfAdults').array().notNull(), // children ages (integer[])
   reservationDate: timestamp('reservationDate').notNull(), // Date of the reservation
-  expiresAt: timestamp('expiresAt').notNull(), // Expiration or end date/time for the reservation
   pricesGrid: text('pricesGrid').notNull(), // Store the prices grid as a string
 });
 
